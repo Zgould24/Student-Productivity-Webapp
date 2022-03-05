@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   }
 
+  //Allows user to navigate to the registration form from the login screen
   goToCreateAccount() {
     let loginRef = document.getElementById("login");
     let createRef = document.getElementById("create-account");
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  //Allows user to navigate back to login screen if registration isn't necessary
   goToLogin() {
     let loginRef = document.getElementById("login");
     let createRef = document.getElementById("create-account");
@@ -36,6 +38,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  //Displays an error to the user stating their username/password combination is invalid
+  //
+  //DEFAULT VALUES FOR LOGIN --> username = "0" password = "0"
+  //Error will display if the user has entered nothing into the username and password boxes
   showLoginError() {
     let userInfo = (<HTMLInputElement>document.getElementById("user-info")).value;
     let passInfo = (<HTMLInputElement>document.getElementById("password-info")).value;

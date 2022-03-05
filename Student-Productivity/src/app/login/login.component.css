@@ -29,6 +29,10 @@
     align-items: center;
 }
 
+#login-error {
+    color: red;
+}
+
 /*-----Account Creation CSS-----*/
 
 .create-account {
@@ -54,14 +58,10 @@
     display: none;
 }
 
-#title {
-    
-}
-
 /*-----Universal CSS-----*/
 
-#login-error {
-    color: red;
+.title {
+    
 }
 
 .interact-button {
@@ -70,7 +70,6 @@
     height: 2rem;
     border: none;
     transition: 0.2s ease-in-out;
-    
 }
 
 .interact-button:hover {
