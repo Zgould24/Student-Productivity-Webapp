@@ -1,17 +1,40 @@
-<div class="page-container">
-  <div class="flex-container">
-    <div id="container">
-      <h1>Welcome!</h1>
+<!--div "Body" acts as body HTML tag so that it helps align the login/signup box center on the main page-->
+<div class="body">
+
+    <!--Main container for both login/create account that flexes to size-->
+    <div class="login-container">
+
+        <!-------LOGIN FORM------->
+        <!--Form that will display all the information for logging in; will be the first thing that loads on our webpage-->
+        <form class="login" id="login">
+            <h1 id="title">Login</h1>
+
+            <!--Error message will not be visible initially; will appear if user inputs incorrect user/password combination-->
+            <h4 class="hide-login-error" id="login-error">Invalid email/username or password</h4>
+            <input class="credentials" id="user-info" type="text" placeholder="Username/Email" autofocus/>
+            <input class="credentials" id="password-info" type="password" placeholder="Password"/>
+            <div id="button-container">
+                <button class="interact-button" (click)="goToCreateAccount()">Create Account</button>
+
+                <!--Login button only has error function, but can be used to route to homepage of user-->
+                <button class="interact-button" (click)="showLoginError()">Log In</button>
+            </div>
+        </form>
+
+        <!-------CREATE ACCOUNT FORM------->
+        <!--Form that will display all the information for creating an account; this will take place of login information-->
+        <form class="create-account hide-create-account" id="create-account">
+            <h1>Create Account</h1>
+            <input class="credentials" type="text" placeholder="First Name"/>
+            <input class="credentials" type="text" placeholder="Last Name"/>
+            <input class="credentials" type="text" placeholder="Email"/>
+            <input class="credentials" type="text" placeholder="Username"/>
+            <input class="credentials" type="text" placeholder="Password"/>
+            <input class="credentials" type="text" placeholder="Confirm Password"/>
+            <div id="button-container">
+                <button class="interact-button" id="return-login" (click)="goToLogin()">Back to Login</button>
+                <button class="interact-button">Sign Up</button>
+            </div>
+        </form>
     </div>
-    <div id="credentials">
-      <h4>Username:</h4>
-      <input id="user" type="text" />
-      <h4>Password:</h4>
-      <input id="pass" type="password" />
-    </div>
-    <div id="login-button">
-      <h4>Forgot password?</h4>
-      <button id="login">Log In</button>
-    </div>
-  </div>
 </div>
