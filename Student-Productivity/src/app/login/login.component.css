@@ -33,7 +33,7 @@
 #login-error {
     margin-top: 0px;
     color: red;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 /*-----Account Creation CSS-----*/
@@ -64,7 +64,7 @@
 /*-----Universal CSS-----*/
 
 .title {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .interact-button {
@@ -73,6 +73,7 @@
     height: 2rem;
     border: none;
     outline: 1px solid rgba(207, 207, 207, 0) !important;
+    font-family: 'Nunito Sans', sans-serif;
     transition: 0.2s ease-in-out;
 }
 
@@ -101,7 +102,9 @@
     padding: 1rem;
     margin-bottom: 5%;
     border: 1.5px solid rgb(141, 141, 141);
-    border-radius: 2.5px;   
+    border-radius: 10px;   
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
     transition: 0.2s ease-in-out;
 }
 
