@@ -43,16 +43,20 @@ export class LoginComponent implements OnInit {
   //DEFAULT VALUES FOR LOGIN --> username = "0" password = "0"
   //Error will display if the user has entered nothing into the username and password boxes
   showLoginError() {
-    let userInfo = (<HTMLInputElement>document.getElementById("user-info")).value;
-    let passInfo = (<HTMLInputElement>document.getElementById("password-info")).value;
+    let userInfo = (<HTMLInputElement>document.getElementById("user-info"));
+    let passInfo = (<HTMLInputElement>document.getElementById("password-info"));
     let error = document.getElementById("login-error");
     
     document.addEventListener("click", e => {
       e.preventDefault();
-      if(userInfo === '0' && passInfo === "0") {
+      if(userInfo.value === '0' && passInfo.value === "0") {
         error?.classList.add("hide-login-error");
+        userInfo.style.borderColor = "black";
+        passInfo.style.borderColor = "black";
       }  else {
-        error?.classList.remove("hide-login-error");
+        error?.classList.remove("hide-login-error"); 
+        userInfo.style.borderColor = "red";
+        passInfo.style.borderColor = "red";
       }
     })
   }

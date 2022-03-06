@@ -18,6 +18,7 @@
     align-items: center;
     flex-direction: column;
     box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
 }
 
 .login {
@@ -69,12 +70,20 @@
     font-size: 1rem;
     height: 2rem;
     border: none;
+    outline: 1px solid rgba(207, 207, 207, 0) !important;
     transition: 0.2s ease-in-out;
 }
 
 .interact-button:hover {
     background-color: rgb(199, 199, 199);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.interact-button:focus {
+    outline: 2px solid rgb(207, 207, 207) !important;
     transition: 0.2s ease-in-out;
 }
 
@@ -83,8 +92,16 @@
     width: 100%;
     padding: 1rem;
     margin-bottom: 5%;
-    border: 1px solid black;
+    border: 1.5px solid rgb(141, 141, 141);
     border-radius: 2.5px;   
+    transition: 0.2s ease-in-out;
+}
+
+.credentials:focus {
+    background-color: rgb(182, 182, 182);
+    transform: scale(1.02);
+    outline: none;
+    transition: 0.2s ease-in-out;
 }
 
 #button-container {
@@ -96,4 +113,8 @@
     gap: 1rem;
     padding-right: 2rem;
     margin-bottom: 5%;
+}
+
+@keyframes fadeInUp{
+    0% {transform: translateY(10%); opacity: 0;}
 }
