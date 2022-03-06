@@ -7,10 +7,10 @@
         <!-------LOGIN FORM------->
         <!--Form that will display all the information for logging in; will be the first thing that loads on our webpage-->
         <form class="login" id="login">
-            <h1 class="title">Login</h1>
+            <h1 class="title">Log In</h1>
 
             <!--Error message will not be visible initially; will appear if user inputs incorrect user/password combination-->
-            <h4 class="hide-login-error" id="login-error">Invalid email/username or password</h4>
+            <h5 class="hide-login-error" id="login-error">Invalid email/username or password</h5>
             <input class="credentials" id="user-info" type="text" placeholder="Username/Email" autofocus/>
             <input class="credentials" id="password-info" type="password" placeholder="Password"/>
             <div id="button-container">
@@ -32,8 +32,8 @@
             <input class="credentials" type="text" placeholder="Password"/>
             <input class="credentials" type="text" placeholder="Confirm Password"/>
             <div id="button-container">
-                <button class="interact-button" id="return-login" (click)="goToLogin($event)">Back to Login</button>
-                <button class="interact-button">Sign Up</button>
+                <button class="interact-button" id="return-login" type="button" (click)="goToLogin($event)">Back to Login</button>
+                <button class="interact-button" type="submit">Sign Up</button>
             </div>
         </form>
     </div>
