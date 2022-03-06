@@ -1,1 +1,20 @@
+# to do:
+#  make it so user can put in their own time they want
+#  bonus: into the place where the numbers themselves display
+# Reference post tutorial  for inputting custom values into a textbox
+#      and having the  display hold the value
+
+#  demo code
+
 <h2>hi</h2>
+
+<countdown [config]="{ leftTime: 30 }"></countdown>
+<br>
+
+<countdown #cd [config]="{ leftTime: 30 }"></countdown>
+      <div>
+        <button (click)="cd.pause()" class="btn btn-link btn-sm">pause</button>
+        <button (click)="cd.resume()" class="btn btn-link btn-sm">resume</button>
+        <button (click)="cd.stop()" class="btn btn-link btn-sm">stop</button>
+        <button (click)="cd.restart()" class="btn btn-link btn-sm">restart</button>
+      </div>
