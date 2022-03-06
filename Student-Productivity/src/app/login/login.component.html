@@ -14,10 +14,10 @@
             <input class="credentials" id="user-info" type="text" placeholder="Username/Email" autofocus/>
             <input class="credentials" id="password-info" type="password" placeholder="Password"/>
             <div id="button-container">
-                <button class="interact-button" type="button" (click)="goToCreateAccount()">Create Account</button>
+                <button class="interact-button" type="button" (click)="goToCreateAccount($event)">Create Account</button>
 
                 <!--Login button only has error function, but can be used to route to homepage of user-->
-                <button class="interact-button" type="submit" (click)="showLoginError()">Log In</button>
+                <button class="interact-button" type="submit" (click)="showLoginError($event)">Log In</button>
             </div>
         </form>
 
@@ -32,7 +32,7 @@
             <input class="credentials" type="text" placeholder="Password"/>
             <input class="credentials" type="text" placeholder="Confirm Password"/>
             <div id="button-container">
-                <button class="interact-button" id="return-login" (click)="goToLogin()">Back to Login</button>
+                <button class="interact-button" id="return-login" (click)="goToLogin($event)">Back to Login</button>
                 <button class="interact-button">Sign Up</button>
             </div>
         </form>
