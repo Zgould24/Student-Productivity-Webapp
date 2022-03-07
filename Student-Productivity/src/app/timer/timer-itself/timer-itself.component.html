@@ -1,5 +1,8 @@
 # to do:
-#  make it so user can put in their own time they want
+#  users can put in hours minute seconds instead of solid seconds only
+#  feed in conversions into text boxes then have that text box calculate
+  #  and turn into seconds to feed into leftTime
+  # fix bug: constrain hours minutes and seconds'
 #  bonus: into the place where the numbers themselves display
 # Reference post tutorial  for inputting custom values into a textbox
 #      and having the  display hold the value
@@ -8,8 +11,15 @@
 
 <h2>hi</h2>
 
-<countdown [config]="{ leftTime: 30 }"></countdown>
+<countdown [config]="{ leftTime: overallTime }" #newTimeInput2></countdown>
 <br>
+<textarea rows="2" [value]="newHours" #newHoursInput></textarea> hours
+<textarea rows="2" [value]="newMinutes" #newMinutesInput></textarea>minutes
+<textarea rows="2" [value]="newSeconds" #newSecondsInput></textarea>seconds
+<br>
+<button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)">set time</button>
+<br>
+
 
 <textarea rows="6" [value]="newTime" #newTimeInput></textarea>
 <br>
