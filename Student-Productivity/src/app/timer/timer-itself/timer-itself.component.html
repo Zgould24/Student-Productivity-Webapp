@@ -11,7 +11,12 @@
 <countdown [config]="{ leftTime: 30 }"></countdown>
 <br>
 
-<countdown #cd [config]="{ leftTime: 30 }"></countdown>
+<textarea rows="6" [value]="newTime" #newTimeInput></textarea>
+<br>
+<button (click)="onSetTimer(newTimeInput)">set time</button>
+<br>
+
+<countdown #cd [config]="{ leftTime: newTime }"></countdown>
       <div>
         <button (click)="cd.pause()" class="btn btn-link btn-sm">pause</button>
         <button (click)="cd.resume()" class="btn btn-link btn-sm">resume</button>

@@ -9,6 +9,10 @@ import { Component } from "@angular/core";
 
 export class TimerItselfComponent{
 
+  newTime = 0;
+  onSetTimer(newTimeInput: HTMLTextAreaElement) {
+    this.newTime= parseInt(newTimeInput.value);
+  }
 }
 
 
