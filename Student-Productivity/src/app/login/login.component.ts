@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgModule } from '@angular/core';
+import { FormBuilder, FormControl, FormsModule, Validators } from '@angular/forms';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +9,18 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  exampleUser = new User("Zachary", "Gould", "zgould24@gmail.com", "zgould24", "123456789");
+  emptySignUp = false;
+
   constructor() {
   }
 
   ngOnInit() {
+
+  }
+
+  emailExistValidator(control: FormControl) {
+    let email = control.value;
 
   }
 

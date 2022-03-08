@@ -63,6 +63,16 @@
 
 /*-----Universal CSS-----*/
 
+.invalid-error {
+    display: flex;
+    margin-top: -1rem;
+    padding-left: 1rem;
+    align-self: flex-start;
+    font-size: 0.8rem;
+    color: red;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 .title {
     font-family: 'Nunito Sans', sans-serif;
 }

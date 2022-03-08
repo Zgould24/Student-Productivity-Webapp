@@ -11,6 +11,7 @@
         <!-------LOGIN FORM------->
         <!--Form that will display all the information for logging in; will be the first thing that loads on our webpage-->
         <form class="login" id="login">
+
             <h1 class="title">Log In</h1>
 
             <!--Error message will not be visible initially; will appear if user inputs incorrect user/password combination-->
@@ -27,18 +28,32 @@
 
         <!-------CREATE ACCOUNT FORM------->
         <!--Form that will display all the information for creating an account; this will take place of login information-->
-        <form class="create-account hide-create-account" id="create-account">
+        <form class="create-account hide-create-account" id="create-account" #createAccountForm="ngForm">
+
             <h1 class="title">Create Account</h1>
-            <input class="credentials" type="text" placeholder="First Name"/>
-            <input class="credentials" type="text" placeholder="Last Name"/>
-            <input class="credentials" type="text" placeholder="Email"/>
-            <input class="credentials" type="text" placeholder="Username"/>
-            <input class="credentials" type="text" placeholder="Password"/>
-            <input class="credentials" type="text" placeholder="Confirm Password"/>
+
+            <div *ngIf="(firstName.touched && firstName.invalid) || emptySignUp" class="invalid-error">First name required</div>
+            <input class="credentials" type="text" placeholder="First Name" required #firstName="ngModel" name="firstName" ngModel/>
+
+            <div *ngIf="lastName.touched && lastName.invalid" class="invalid-error">Last name required</div>
+            <input class="credentials" type="text" placeholder="Last Name" required #lastName="ngModel" name="lastName" ngModel/>
+
+            <div *ngIf="email.touched && email.invalid" class="invalid-error">Email required</div>
+            <input class="credentials" type="text" placeholder="Email" required #email="ngModel" name="email" ngModel/>
+
+            <input class="credentials" type="text" placeholder="Username" name="username" ngModel/>
+
+            <div *ngIf="password.touched && password.invalid && confirmPassword.invalid" class="invalid-error">Password required</div>
+            <div *ngIf="(password.value != confirmPassword.value) && (password.valid || confirmPassword.valid)" class="invalid-error">Passwords do not match</div>
+            <input class="credentials" type="password" placeholder="Password" required #password="ngModel" name="password" ngModel/>
+            <input class="credentials" type="password" placeholder="Confirm Password" required #confirmPassword="ngModel" name="confirmPassword" ngModel/>
+
             <div id="button-container">
                 <button class="interact-button" id="return-login" type="button" (click)="goToLogin($event)">Back to Login</button>
                 <button class="interact-button" type="submit">Sign Up</button>
             </div>
         </form>
     </div>
+    <div id="test"></div>
+    <div id="test2"></div>
 </div>
