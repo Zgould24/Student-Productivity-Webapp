@@ -1,7 +1,4 @@
 # to do:
-#  users can put in hours minute seconds instead of solid seconds only
-#  feed in conversions into text boxes then have that text box calculate
-  #  and turn into seconds to feed into leftTime
   # fix bug: constrain hours minutes and seconds'
   #fix bug: time inputted ends up registering in the textbox.
   #clear the textbox?
@@ -12,10 +9,18 @@
 #abreak button green background1010
 
 #  demo code
-
-<h2>hi</h2>
-
+<br>
+<br>
 <countdown [config]="{ leftTime: overallTime }" #newTimeInput2></countdown>
+<br>
+
+<div>
+  <button (click)="newTimeInput2.pause()" class="btn btn-link btn-sm">pause</button>
+  <button (click)="newTimeInput2.resume()" class="btn btn-link btn-sm">resume</button>
+  <button (click)="newTimeInput2.stop()" class="btn btn-link btn-sm">stop</button>
+  <button (click)="newTimeInput2.restart()" class="btn btn-link btn-sm">restart</button>
+</div>
+
 <br>
 <textarea rows="2" [value]="newHours" #newHoursInput></textarea> hours
 <textarea rows="2" [value]="newMinutes" #newMinutesInput></textarea>minutes
@@ -23,8 +28,11 @@
 <br>
 <button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)">set time</button>
 <br>
+<br>
 
-
+<br>
+<br>
+<br>
 <textarea rows="6" [value]="newTime" #newTimeInput></textarea>
 <br>
 <button (click)="onSetTimer(newTimeInput)">set time</button>

@@ -23,6 +23,9 @@ export class TimerItselfComponent{
     this.newMinutes=60 * parseInt(newMinutesInput.value);
     this.newSeconds=parseInt(newSecondsInput.value);
     this.overallTime= this.newHours + this.newMinutes + this.newSeconds;
+    this.newHours= 0;
+    this.newMinutes= 0;
+    this.newSeconds= 0;
   }
 
 }
