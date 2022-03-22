@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <label for="assignment">assignment course:</label>
+          <label for="assignment">Course:</label>
           <input class="form-control" [(ngModel)]="assignment.course" id="assignment">
         </div>
       </div>
@@ -10,8 +10,16 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <label for="assignment">assignment:</label>
+          <label for="assignment">Assignment:</label>
           <input class="form-control" id="assignment" [(ngModel)]="assignment.assignment">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="assignment">Due Date:</label>
+          <input class="form-control" id="assignment" [(ngModel)]="assignment.dueDate">
         </div>
       </div>
     </div>
@@ -31,11 +39,13 @@
         <th>Course</th>
         <th>Assignment</th>
         <th>Due Date</th>
+        <th>Complete</th>
     </tr>
     <tr *ngFor="let homework of homeworks">
         <td>{{ homework.course }}</td>
         <td>{{ homework.assignment }}</td>
         <td>{{ homework.dueDate }}</td>
+        <td><input class="button" type="button" value="Complete" (click)="complete($event)"></td>
     </tr>
 </table>
 </div>

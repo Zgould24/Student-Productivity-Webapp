@@ -16,30 +16,18 @@ export class AssignmentComponent{
 
   ngOnInit(): void {
 
-    this.homeworks = [{
-      course:'CMS484',
-      assignment:'Writing Assignment # 4',
-      dueDate: '04/04/2022',
-      id: 0
-    },
-    {
-      course:'CMS375',
-      assignment:'Writing Assignment # 4',
-      dueDate: '04/04/2022',
-      id: 0
-    },
-    {
-      course:'CMS230',
-      assignment:'Writing Assignment # 4',
-      dueDate: '04/04/2022',
-      id: 0
-    }];
+    this.homeworks = [];
     console.log(this.homeworks);
   }
 
   submit() {
-    let newAssignment = new Assignment(this.assignment.course, this.assignment.assignment, this.assignment.dueDate);
-    console.log(newAssignment);
+    //let newAssignment = new Assignment(this.assignment.course, this.assignment.assignment, this.assignment.dueDate);
+    this.homeworks.push(this.assignment);
+    console.log(this.homeworks);
+  }
+
+  complete(event: any) {
+    console.log(event);
   }
 
 }
