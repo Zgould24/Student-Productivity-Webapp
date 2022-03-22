@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Assignment } from '../models/assignment';
 
 @Component({
   selector: 'app-assignment',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentComponent{
 
+  assignment: Assignment;
   homeworks: any;
-  constructor() { }
+  constructor() { 
+    this.assignment = new Assignment('CMS', 'POL', '07/09/2020');
+  }
 
   ngOnInit(): void {
 
@@ -31,6 +35,11 @@ export class AssignmentComponent{
       id: 0
     }];
     console.log(this.homeworks);
+  }
+
+  submit() {
+    let newAssignment = new Assignment(this.assignment.course, this.assignment.assignment, this.assignment.dueDate);
+    console.log(newAssignment);
   }
 
 }

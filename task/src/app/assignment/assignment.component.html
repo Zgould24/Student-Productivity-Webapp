@@ -1,35 +1,32 @@
 <div class="container">
-<form class="create_assignment">
-    <h2>Create Assignments</h2>
-    <div class="form-row">
-        <div class="form-group col-md-3">
-            <label for="course">Course</label>
-            <input type="text" class="register-inputs form-control" id="course">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="assignment">assignment course:</label>
+          <input class="form-control" [(ngModel)]="assignment.course" id="assignment">
         </div>
-
-        <div class="form-group col-md-3">
-            <label for="assignment">Assignment</label>
-            <input type="text" class="register-inputs form-control" id="assignment">
-        </div>
-
-        <div class="form-group col-md-3">
-            <label for="dueDate">Due Date</label>
-            <input type="date" class="register-inputs form-control" id="dueDate">
-        </div>
+      </div>
     </div>
-</form>
-</div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="assignment">assignment:</label>
+          <input class="form-control" id="assignment" [(ngModel)]="assignment.assignment">
+        </div>
+      </div>
+    </div>
+  </div>
 
-<input class="button" type="button" value="Submit" onclick="create();">
+<input class="button" type="button" value="Submit" (click)="submit()">
 
-<div class="container upcoming_assignments">
+<div>
 <h2>Upcoming Assignments</h2>
 
 <ul id="assignmentList">
 <!-- display the list items (li) -->
 </ul>
 
-<table class="table table-hover" id="assignmentTable">
+<table>
     <tr>
         <th>Course</th>
         <th>Assignment</th>
