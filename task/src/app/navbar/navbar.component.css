@@ -1,0 +1,15 @@
+.navbar-brand{
+    font-family: 'Roboto Mono', monospace;;
+    font-size: 3rem;
+    line-height: 1;
+    margin-right: 4%;
+}
+.study_app{
+    color: rgb(255, 207, 47);
+    font-size: 3rem;
+    font-weight: 900;
+}
+#icon {
+    height: 5rem;
+    padding-right: 10rem;
+}

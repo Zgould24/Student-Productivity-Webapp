@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { AssignmentComponent } from './assignment/assignment.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AssignmentComponent
+    AssignmentComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

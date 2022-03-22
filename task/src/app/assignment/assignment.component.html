@@ -1,1 +1,41 @@
-<p>assignment works!</p>
+<div class="container">
+    <form class="create_assignment">
+        <h2>Create Assignments</h2>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="course">Course</label>
+                <input type="text" class="register-inputs form-control" id="course">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="assignment">Assignment</label>
+                <input type="text" class="register-inputs form-control" id="assignment">
+            </div>
+
+
+            <div class="form-group col-md-3">
+                <label for="dueDate">Due Date</label>
+                <input type="date" class="register-inputs form-control" id="dueDate">
+            </div>
+        </div>
+    </form>
+</div>
+
+<input class="button" type="button" value="Submit" onclick="create();">
+
+<div class="container upcoming_assignments">
+    <h2>Upcoming Assignments</h2>
+
+    <ul id="assignmentList">
+    <!-- display the list items (li) -->
+    </ul>
+
+    <table class="table table-hover" id="assignmentTable">
+        <tr>
+        <th>Course</th>
+        <th>Assignment</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        </tr>
+    </table>
+</div>
