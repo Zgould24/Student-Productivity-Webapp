@@ -1,4 +1,4 @@
-# to do:
+<!---# to do:
   # fix bug: constrain hours minutes and seconds'
   #fix bug: time inputted ends up registering in the textbox.
   #clear the textbox?
@@ -6,7 +6,13 @@
 # Reference post tutorial  for inputting custom values into a textbox
 #      and having the  display hold the value
 #once the timer is done there should be a sound
-#abreak button green background1010
+# error message for invalid values
+#abreak button green background1010--->
+
+<div>
+  <p>ERROR MESSAGE!</p>
+  <p>{{newError}}</p>
+</div>
 
 #  demo code
 <br>
@@ -22,26 +28,10 @@
 </div>
 
 <br>
-<textarea rows="2" [value]="newHours" #newHoursInput></textarea> hours
+<textarea rows="2" [value]="newHours" #newHoursInput input type="number"></textarea> hours
 <textarea rows="2" [value]="newMinutes" #newMinutesInput></textarea>minutes
 <textarea rows="2" [value]="newSeconds" #newSecondsInput></textarea>seconds
 <br>
 <button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)">set time</button>
 <br>
 <br>
-
-<br>
-<br>
-<br>
-<textarea rows="6" [value]="newTime" #newTimeInput></textarea>
-<br>
-<button (click)="onSetTimer(newTimeInput)">set time</button>
-<br>
-
-<countdown #cd [config]="{ leftTime: newTime }"></countdown>
-      <div>
-        <button (click)="cd.pause()" class="btn btn-link btn-sm">pause</button>
-        <button (click)="cd.resume()" class="btn btn-link btn-sm">resume</button>
-        <button (click)="cd.stop()" class="btn btn-link btn-sm">stop</button>
-        <button (click)="cd.restart()" class="btn btn-link btn-sm">restart</button>
-      </div>
