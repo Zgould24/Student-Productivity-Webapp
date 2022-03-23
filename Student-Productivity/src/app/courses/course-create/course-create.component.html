@@ -1,0 +1,67 @@
+<form [formGroup]="courseForm" >
+    <div class="input-container">
+        <label for="title" class="form-label">Title: </label>
+        <input id="title" formControlName="CourseTitle" type="text" class="title-input" required>
+    </div>
+        <small class="warning" *ngIf="courseForm.controls['CourseTitle'].invalid && (courseForm.controls['CourseTitle'].dirty || courseForm.controls['CourseTitle'].touched)">
+            Course Title is required.
+        </small>
+    <div class="input-container">
+        <label for="instructorName">Instructor Name: </label>
+        <input id="instructorName" type="text" formControlName="InstructorName" class="instructorName-input" required>
+    </div>
+    <small class="warning" *ngIf="courseForm.controls['InstructorName'].invalid && (courseForm.controls['InstructorName'].dirty || courseForm.controls['InstructorName'].touched)">
+            Instructor Name is required.
+        </small>
+    <div class="input-container">
+        <label for="classTime">Class Meeting Time</label>
+        <div id="classTime"class="classTime-form">
+             <table class="classTime-table bordered" formArrayName="ClassTimes">
+            <!-- tr represents the row of the table. -->
+            <tr *ngFor="let classTime of classTimes().controls; let i = index" [formGroupName]="i">
+                <td>
+                    <input type="text" formControlName="time" class="form-control">
+                </td>
+                <td>
+                    <button class="remove-btn" (click)="removeClassTime(i)">Remove</button>
+                </td>
+            </tr>
+            <tr><th width="150px"><button class="add-btn" (click)="addClassTime()">Add More</button></th></tr>
+        </table>
+        </div>
+       
+    </div>
+    <div class="input-container">
+        <label for="officeHours">Office Hours</label>
+        <div id="officeHours">
+            <table class="officeHours-table" formArrayName="OfficeHours">
+                <tr *ngFor="let officeHour of OfficeHours().controls; let j = index" [formGroupName]="j">
+                    <td>
+                    <input type="text" formControlName="time" class="form-control">
+                    </td>
+                    <td>
+                    <button class="remove-btn" (click)="removeOfficeHour(j)">Remove</button>
+                    </td>  
+                </tr>
+               
+                  <tr><th width="150px"><button class="add-btn" (click)="addOfficeHour()">Add More</button></th></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <label for="courseMemo">Note:</label>
+        <div id="courseMemo">
+            <textarea name="input" rows="6" formControlName="CourseMemo"></textarea>
+        </div>
+    </div>
+ 
+</form>
+<!-- <div class="warning" *ngIf="courseForm.invalid">
+    <small>
+        <p>Course Title and Instructor Name are required</p>
+    </small>
+</div> -->
+<div>
+   <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+</div>

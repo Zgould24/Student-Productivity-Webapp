@@ -1,0 +1,17 @@
+.course-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+
+.input-container {
+    display: flex;
+    float: row;
+    justify-content: space-evenly;
+}
+
+.warning {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
