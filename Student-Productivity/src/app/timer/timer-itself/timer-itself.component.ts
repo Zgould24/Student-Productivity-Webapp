@@ -16,7 +16,7 @@ export class TimerItselfComponent{
   newMinutes= 0;
   newSeconds= 0;
   overallTime=0;
-  newError='no error';
+  newError='';
 
   onSetTimer(newTimeInput: HTMLTextAreaElement) {
     this.newTime= parseInt(newTimeInput.value);
@@ -38,6 +38,9 @@ export class TimerItselfComponent{
     /*
     do the num restriction
     */
+
+    this.newError = '';
+
     if (parseInt(newMinutesInput.value) > 60) {
       newMinutesInput.value = '60';
     }
