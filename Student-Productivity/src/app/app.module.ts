@@ -9,17 +9,22 @@ import { HttpClientModule} from '@angular/common/http';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { CountdownModule } from 'ngx-countdown';
+import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AssignmentComponent,
-    NavbarComponent
+    NavbarComponent,
+    TimerItselfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
