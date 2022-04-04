@@ -1,3 +1,4 @@
+<div class="form-container">
 <form [formGroup]="courseForm" >
     <div class="input-container">
         <label for="title" class="form-label">Title: </label>
@@ -57,11 +58,7 @@
     </div>
  
 </form>
-<!-- <div class="warning" *ngIf="courseForm.invalid">
-    <small>
-        <p>Course Title and Instructor Name are required</p>
-    </small>
-</div> -->
-<div>
-   <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+
+   <button type="submit" class="btn" (click)="onSubmit()">Submit</button>
+
 </div>

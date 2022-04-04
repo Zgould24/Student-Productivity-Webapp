@@ -96,7 +96,6 @@ export class CourseCreateComponent implements OnInit {
         officehours.push(Object['values'](oh)[0]);
       }
 
-
        this.coursesService.addCourse(this.courseForm.controls['CourseTitle'].value, this.courseForm.controls['InstructorName'].value, meetTimes, officehours, this.courseForm.controls['CourseMemo'].value);
       this.courseForm.reset();
    }
