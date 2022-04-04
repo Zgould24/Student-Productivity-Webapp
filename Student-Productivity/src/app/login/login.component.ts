@@ -1,31 +1,23 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, Validators } from '@angular/forms';
-import { User } from 'src/app/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  exampleUser = new User("Zachary", "Gould", "zgould24@gmail.com", "zgould24", "123456789");
-  emptySignUp = false;
-
-  constructor() {
+  constructor(private router:Router) {
   }
 
   ngOnInit() {
-
-  }
-
-  emailExistValidator(control: FormControl) {
-    let email = control.value;
-
   }
 
   //Allows user to navigate to the registration form from the login screen
-  goToCreateAccount(e:Event) {
+  goToCreateAccount(e: Event) {
     let loginRef = document.getElementById("login");
     let createRef = document.getElementById("create-account");
 
@@ -58,11 +50,30 @@ export class LoginComponent implements OnInit {
       error?.classList.add("hide-login-error");
       userInfo.style.borderColor = "rgb(141, 141, 141)";
       passInfo.style.borderColor = "rgb(141, 141, 141)";
+      this.router.navigateByUrl('/home');
     }  else {
       error?.classList.remove("hide-login-error"); 
       userInfo.style.borderColor = "red";
       passInfo.style.borderColor = "red";
     }
-    
+  }
+
+  showCreateAccountError() {
+    let fn = (<HTMLInputElement>document.getElementById("f_name"));
+    let ln = (<HTMLInputElement>document.getElementById("l_name"));
+    let e = (<HTMLInputElement>document.getElementById("email"));
+    let p = (<HTMLInputElement>document.getElementById("pass"));
+    let cp = (<HTMLInputElement>document.getElementById("c_pass"));
+
+    if(!fn.value || !ln.value || !e.value || !p.value || !cp.value) {
+      alert("missing info");
+      fn.style.borderColor = "red";
+      ln.style.borderColor = "red";
+      e.style.borderColor = "red";
+      p.style.borderColor = "red";
+      cp.style.borderColor = "red";
+    }  else {
+      this.router.navigateByUrl('/home');
+    }
   }
 }
