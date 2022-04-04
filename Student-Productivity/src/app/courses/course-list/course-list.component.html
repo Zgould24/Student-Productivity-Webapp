@@ -1,0 +1,39 @@
+<div class="course-list-class">
+<div class="header">
+    <div class="add-course">
+    <button id="addCourse" (click)="toggleShow()">&#43;</button>
+    <div class="form-container" *ngIf="isShown">
+        <course-create></course-create>
+    </div>
+    </div>
+   
+</div>
+<div class="course-list-container" *ngFor="let course of Courses">
+    <details>
+        <summary>
+            <header>{{course.title}}</header>
+        </summary>
+        <div class="details-container">
+        <h1 class="course-title">{{course.title}}</h1>
+        <h2 class="course-instructor">Instructor Name: {{course.instructorName}}</h2>
+        <div class="schedule-container">
+            <h3>Class Time</h3>
+            <div class="schedule-content" *ngFor='let class of course.classTime'>
+           <p>{{class}}</p> 
+        </div>
+        </div>
+        <div class="officeHours-container">
+        <h3>Office Hours</h3>
+        <div class="officeHours" *ngFor='let officehour of course.officeHours'>
+            <p>{{officehour}}</p>
+        </div>
+        </div>
+        </div>
+        
+        
+    </details>
+</div>
+</div>
+
+
+
