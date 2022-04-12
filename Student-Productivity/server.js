@@ -72,3 +72,5 @@ const onError = error => {
  server.on("error", onError);
  server.on("listening", onListening);
  server.listen(port);
+
+ // Use 'npm run nserve' to run this server

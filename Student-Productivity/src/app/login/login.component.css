@@ -97,6 +97,7 @@
     transform: scale(1.05);
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    background-color: rgb(200, 64, 33);
 }
 
 .interact-button:focus {
@@ -105,7 +106,7 @@
 }
 
 .interact-button:hover:active {
-    background-color: rgb(153, 153, 153);
+    background-color: rgb(200, 64, 33);
     transform: scale(1.00);
     transition: 1ms ease-in-out;
 }
@@ -115,7 +116,7 @@
     width: 100%;
     padding: 1rem;
     margin-bottom: 5%;
-    border: 3px solid rgb(61, 90, 128);
+    border: 1px solid rgb(61, 90, 128);
     border-radius: 10px;   
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1rem;
@@ -127,6 +128,7 @@
     transform: scale(1.02);
     outline: none;
     transition: 0.2s ease-in-out;
+    color: white;
 }
 
 .credentials:focus::placeholder {

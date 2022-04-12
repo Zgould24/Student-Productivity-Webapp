@@ -10,47 +10,48 @@
 
         <!-------LOGIN FORM------->
         <!--Form that will display all the information for logging in; will be the first thing that loads on our webpage-->
-        <form class="login" id="login" method="post">
+        <form class="login" id="login" method="post" [formGroup]="login" (submit)="showLoginError()">
 
             <h1 class="title">Log In</h1>
 
             <!--Error message will not be visible initially; will appear if user inputs incorrect user/password combination-->
             <h5 class="hide-login-error" id="login-error">Invalid email/username or password</h5>
-            <input class="credentials" id="user-info" type="text" #user placeholder="Username/Email" autofocus/>
-            <input class="credentials" id="password-info" type="password" #pass placeholder="Password"/>
+            <input class="credentials" id="user-info" type="text" placeholder="Username/Email" formControlName="username" autofocus/>
+            <input class="credentials" id="password-info" type="password" placeholder="Password" formControlName="password"/>
+            
             <div id="button-container">
-                <button class="interact-button" type="button" (click)="goToCreateAccount($event)">Create Account</button>
+                <button class="interact-button" type="button" (click)="goToCreateAccount()">Create Account</button>
 
                 <!--Login button only has error function, but can be used to route to homepage of user-->
-                <button class="interact-button" type="submit" name="submit" (click)="showLoginError($event)">Log In</button>
+                <button class="interact-button" type="submit" name="submit">Log In</button>
             </div>
         </form>
 
         <!-------CREATE ACCOUNT FORM------->
         <!--Form that will display all the information for creating an account; this will take place of login information-->
-        <form class="create-account hide-create-account" id="create-account" #createAccountForm="ngForm" ngModel>
+        <form class="create-account hide-create-account" id="create-account" [formGroup]="account" (submit)="showCreateAccountError()">
 
             <h1 class="title" >Create Account</h1>
 
-            <div *ngIf="(firstName.touched && firstName.invalid)" class="invalid-error">First name required</div>
-            <input id="f_name" class="credentials" type="text" placeholder="First Name" required #firstName="ngModel" name="firstName" ngModel/>
+            <div *ngIf="(account.get('firstname')?.touched && account.get('firstname')?.invalid)" class="invalid-error">First name required</div>
+            <input id="f_name" class="credentials" type="text" placeholder="First Name" required name="firstName" formControlName="firstname"/>
 
-            <div *ngIf="lastName.touched && lastName.invalid" class="invalid-error">Last name required</div>
-            <input id="l_name" class="credentials" type="text" placeholder="Last Name" required #lastName="ngModel" name="lastName" ngModel/>  
+            <div *ngIf="account.get('lastname')?.touched && account.get('lastname')?.invalid" class="invalid-error">Last name required</div>
+            <input id="l_name" class="credentials" type="text" placeholder="Last Name" required name="lastName" formControlName="lastname"/>  
 
-            <div *ngIf="email.touched && email.invalid" class="invalid-error">Email required</div>
-            <input id="email" class="credentials" type="text" placeholder="Email" required #email="ngModel" name="email" ngModel/>
+            <div *ngIf="account.get('email')?.touched && account.get('email')?.invalid" class="invalid-error">Email required</div>
+            <input id="email" class="credentials" type="text" placeholder="Email" required name="email" formControlName="email"/>
 
-            <input class="credentials" type="text" placeholder="Username" name="username" ngModel/>
+            <input class="credentials" type="text" placeholder="Username" name="username" formControlName="username"/>
 
-            <div *ngIf="password.touched && password.invalid && confirmPassword.invalid" class="invalid-error">Password required</div>
-            <div *ngIf="(password.value != confirmPassword.value) && (password.valid || confirmPassword.valid)" class="invalid-error">Passwords do not match</div>
-            <input id="pass" class="credentials" type="password" placeholder="Password" required #password="ngModel" name="password" ngModel/>
-            <input id="c_pass" class="credentials" type="password" placeholder="Confirm Password" required #confirmPassword="ngModel" name="confirmPassword" ngModel/>
+            <div *ngIf="account.get('password')?.touched && account.get('password')?.invalid && account.get('confirmPassword')?.invalid" class="invalid-error">Password required</div>
+            <div *ngIf="(account.get('password')?.value != account.get('confirmPassword')?.value) && (account.get('password')?.valid || account.get('confirmPassword')?.valid)" class="invalid-error">Passwords do not match</div>
+            <input id="pass" class="credentials" type="password" placeholder="Password" required name="password" formControlName="password"/>
+            <input id="c_pass" class="credentials" type="password" placeholder="Confirm Password" required name="confirmPassword" formControlName="confirmPassword"/>
 
             <div id="button-container">
-                <button class="interact-button" id="return-login" type="button" (click)="goToLogin($event)">Back to Login</button>
-                <button class="interact-button" type="submit" (click)="showCreateAccountError()">Sign Up</button>
+                <button class="interact-button" id="return-login" type="button" (click)="goToLogin()">Back to Login</button>
+                <button class="interact-button" type="submit" >Sign Up</button>
             </div>
         </form>
     </div>

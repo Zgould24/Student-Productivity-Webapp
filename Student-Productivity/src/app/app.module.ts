@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router, Routes } from '@angular/router';
 
@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent}
@@ -27,7 +26,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     LoginService

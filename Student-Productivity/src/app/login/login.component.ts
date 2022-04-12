@@ -1,7 +1,11 @@
-import { HtmlParser } from '@angular/compiler';
-import { Component, OnInit, ViewChild, ElementRef, NgModule } from '@angular/core';
-import { FormBuilder, FormControl, FormsModule, Validators } from '@angular/forms';
+
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { LoginService } from '../login/login.service';
+import { Account } from '../login/login.model';
+
 
 @Component({
   selector: 'app-login',
@@ -10,14 +14,39 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) {
-  }
+  account: FormGroup;
+  login: FormGroup;
+  loginAccount: Account;
+  test:Account;
+
+  constructor(private router:Router, private loginService: LoginService) {}
 
   ngOnInit() {
+    this.login = new FormGroup({
+      username: new FormControl(),
+      password: new FormControl()
+    });
+
+    this.account = new FormGroup({
+      firstname: new FormControl(),
+      lastname: new FormControl(),
+      email: new FormControl(),
+      username: new FormControl(),
+      password: new FormControl(),
+      confirmPassword: new FormControl()
+    });
+  }
+
+  addAccount() {
+    if(this.account.invalid) {
+      return;
+    }
+    this.loginService.addAccount(this.account.get('firstname')?.value, this.account.get('lastname')?.value, this.account.get('email')?.value, this.account.get('username')?.value, this.account.get('password')?.value);
+    this.account.reset;
   }
 
   //Allows user to navigate to the registration form from the login screen
-  goToCreateAccount(e: Event) {
+  goToCreateAccount() {
     let loginRef = document.getElementById("login");
     let createRef = document.getElementById("create-account");
 
@@ -26,11 +55,10 @@ export class LoginComponent implements OnInit {
   }
 
   //Allows user to navigate back to login screen if registration isn't necessary
-  goToLogin(e: Event) {
+  goToLogin() {
     let loginRef = document.getElementById("login");
     let createRef = document.getElementById("create-account");
 
-    e.preventDefault();
     loginRef?.classList.remove("hide-login-container");
     createRef?.classList.add("hide-create-account");
   }
@@ -39,17 +67,16 @@ export class LoginComponent implements OnInit {
   //
   //DEFAULT VALUES FOR LOGIN --> username = "0" password = "0"
   //Error will display if the user has entered nothing into the username and password boxes
-  showLoginError(e: Event) {
+  showLoginError() {
     let userInfo = (<HTMLInputElement>document.getElementById("user-info"));
     let passInfo = (<HTMLInputElement>document.getElementById("password-info"));
     let error = document.getElementById("login-error");
 
-    e.preventDefault();
-  
     if(userInfo.value === '0' && passInfo.value === "0") {
       error?.classList.add("hide-login-error");
-      userInfo.style.borderColor = "rgb(141, 141, 141)";
-      passInfo.style.borderColor = "rgb(141, 141, 141)";
+      userInfo.style.borderColor = "rgb(61, 90, 128)";
+      passInfo.style.borderColor = "rgb(61, 90, 128)";
+
       this.router.navigateByUrl('/home');
     }  else {
       error?.classList.remove("hide-login-error"); 
@@ -73,6 +100,13 @@ export class LoginComponent implements OnInit {
       p.style.borderColor = "red";
       cp.style.borderColor = "red";
     }  else {
+      console.log(this.account.get('firstname')?.value + "\n"
+                + this.account.get('lastname')?.value + "\n"
+                + this.account.get('email')?.value + "\n"
+                + this.account.get('username')?.value + "\n"
+                + this.account.get('password')?.value + "\n"
+                + this.account.get('confirmPassword')?.value);
+      this.addAccount();
       this.router.navigateByUrl('/home');
     }
   }
