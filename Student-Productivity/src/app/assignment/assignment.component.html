@@ -1,33 +1,25 @@
-<div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="assignment">Course:</label>
-          <input class="form-control" [(ngModel)]="assignment.course" id="assignment">
+<div class="create">
+  <h2>Create Assignment</h2>
+        <div class="course">
+          <label for="assignment">Course</label>
+          <input [(ngModel)]="assignment.course" id="assignment">
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="assignment">Assignment:</label>
-          <input class="form-control" id="assignment" [(ngModel)]="assignment.assignment">
+        <div class="assignment">
+          <label for="assignment">Assignment</label>
+          <input id="assignment" [(ngModel)]="assignment.assignment">
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="assignment">Due Date:</label>
-          <input class="form-control" id="assignment" [(ngModel)]="assignment.dueDate">
+        <div class="due-date">
+          <label for="assignment">Due Date</label>
+          <input type="datetime-local" id="assignment" [(ngModel)]="assignment.dueDate">
         </div>
-      </div>
-    </div>
+        <div class="submit">
+          <input class="button" type="button" value="Submit" (click)="submit()">
+        </div>
   </div>
 
-<input class="button" type="button" value="Submit" (click)="submit()">
 
-<div>
+
+<div class="upcoming">
   <h2>Upcoming Assignments</h2>
   <table>
       <tr>
@@ -40,12 +32,12 @@
           <td>{{ homework.course }}</td>
           <td>{{ homework.assignment }}</td>
           <td>{{ homework.dueDate }}</td>
-          <td><input class="button" type="button" value="Complete" (click)="complete(homework)"></td>
+          <td><input class="button complete" type="button" value="Complete" (click)="complete(homework)"></td>
       </tr>
   </table>
 </div>
 
-<div>
+<div class="completed">
   <h2>Completed Assignments</h2>
   <table>
       <tr>
