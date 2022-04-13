@@ -13,6 +13,17 @@ import { CourseListComponent } from './courses/course-list/course-list.component
 import { CountdownModule } from 'ngx-countdown';
 import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
 
+// Calendar imports
+import { CalendarComponent } from './calendar/calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin! (need to download)
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin! (need to download)
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +31,8 @@ import { TimerItselfComponent } from './timer/timer-itself/timer-itself.componen
     NavbarComponent,
     TimerItselfComponent,
     CourseCreateComponent,
-    CourseListComponent
+    CourseListComponent,
+    CalendarComponent,
 
   ],
   imports: [
@@ -29,7 +41,8 @@ import { TimerItselfComponent } from './timer/timer-itself/timer-itself.componen
     HttpClientModule,
     FormsModule,
     CountdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
