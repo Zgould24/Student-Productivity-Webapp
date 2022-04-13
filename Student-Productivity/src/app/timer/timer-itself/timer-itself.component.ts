@@ -4,7 +4,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-timer-itself',
-  templateUrl: './timer-itself.component.html'
+  templateUrl: './timer-itself.component.html' ,
+  styleUrls:  ['./timer-itself.component.css']
 })
 
 export class TimerItselfComponent{

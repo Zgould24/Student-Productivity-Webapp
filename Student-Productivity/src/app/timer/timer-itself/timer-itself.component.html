@@ -9,27 +9,43 @@
 # error message for invalid values
 #abreak button green background1010--->
 
-<div>
-  <p>{{newError}}</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+<!---<link rel="stylesheet" href="timer-itself.component.css">--->
+</head>
+<body class="timerbg">
 
-<br>
-<br>
-<countdown [config]="{ leftTime: overallTime }" #newTimeInput2></countdown>
-<br>
+  <div>
+    <p>{{newError}}</p>
+  </div>
 
-<div>
-  <button (click)="newTimeInput2.pause()" class="btn btn-link btn-sm">pause</button>
-  <button (click)="newTimeInput2.resume()" class="btn btn-link btn-sm">resume</button>
-  <button (click)="newTimeInput2.stop()" class="btn btn-link btn-sm">stop</button>
-  <button (click)="newTimeInput2.restart()" class="btn btn-link btn-sm">restart</button>
-</div>
+  <br>
+  <br>
+  <countdown [config]="{ leftTime: overallTime }" #newTimeInput2 class="bigtime center-it"></countdown>
+  <br>
 
-<br>
-<textarea rows="2" [value]="newHours" #newHoursInput input type="number"></textarea> hours
-<textarea rows="2" [value]="newMinutes" #newMinutesInput></textarea>minutes
-<textarea rows="2" [value]="newSeconds" #newSecondsInput></textarea>seconds
-<br>
-<button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)">set time</button>
-<br>
-<br>
+  <div class="timebuttons center-it">
+    <button (click)="newTimeInput2.pause()" class="btn btn-link btn-sm"  class="my-button">pause</button>
+    <button (click)="newTimeInput2.resume()" class="btn btn-link btn-sm"  class="my-button">resume</button>
+    <!--<button (click)="newTimeInput2.stop()" class="btn btn-link btn-sm"  class="my-button">stop</button>-->
+    <button (click)="newTimeInput2.restart()" class="btn btn-link btn-sm my-button">restart</button>
+  </div>
+
+  <br>
+  <br>
+  <div class="center-it textformat">
+  <textarea rows="1" [value]="newHours" #newHoursInput input type="number"></textarea> hours
+  <textarea rows="1" [value]="newMinutes" #newMinutesInput></textarea>minutes
+  <textarea rows="1" [value]="newSeconds" #newSecondsInput></textarea>seconds
+
+  <button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)" class="my-button2">set time</button>
+  </div>
+  <br>
+  <br>
+
+
+</body>
+</html>
+
+
