@@ -10,7 +10,7 @@ import { CourseCreateComponent } from './courses/course-create/course-create.com
 import { CourseListComponent } from './courses/course-list/course-list.component';
 
 
-import { CountdownModule } from 'ngx-countdown';
+// import { CountdownModule } from 'ngx-countdown';
 import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { TimerItselfComponent } from './timer/timer-itself/timer-itself.componen
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CountdownModule,
+    // CountdownModule,
     ReactiveFormsModule
   ],
   providers: [],
