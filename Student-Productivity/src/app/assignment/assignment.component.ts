@@ -11,8 +11,9 @@ export class AssignmentComponent{
   assignment: Assignment;
   homeworks: any;
   completes: any;
+  clicked = false;
   constructor() { 
-    this.assignment = new Assignment('CMS', 'POL', '07/09/2020');
+    this.assignment = new Assignment();
   }
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class AssignmentComponent{
     this.assignment = newAssignment;
     this.homeworks.push(this.assignment);
     console.log(this.homeworks);
+    this.clicked = true;
   }
 
   complete(event: any) {
@@ -34,4 +36,10 @@ export class AssignmentComponent{
     this.completes.push(event);
     this.homeworks.splice(this.homeworks.indexOf(event), 1);
   }
+
+  // clear() {
+  //   this.assignment.course = '';
+  //   this.assignment.assignment = '';
+  //   this.assignment.dueDate = '';
+  // }
 }
