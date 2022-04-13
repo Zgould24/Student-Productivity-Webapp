@@ -10,13 +10,17 @@ import { CourseCreateComponent } from './courses/course-create/course-create.com
 import { CourseListComponent } from './courses/course-list/course-list.component';
 
 
+import { CountdownModule } from 'ngx-countdown';
+import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AssignmentComponent,
     NavbarComponent,
+    TimerItselfComponent,
     CourseCreateComponent,
-    CourseListComponent,
+    CourseListComponent
 
   ],
   imports: [
@@ -24,6 +28,7 @@ import { CourseListComponent } from './courses/course-list/course-list.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    CountdownModule,
     ReactiveFormsModule
   ],
   providers: [],
