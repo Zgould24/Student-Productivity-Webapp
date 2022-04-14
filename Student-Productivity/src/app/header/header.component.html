@@ -1,0 +1,21 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+
+<div id="heading">
+    <h1>Student Productivity App</h1>
+    <div class="navigation">
+        <button id="home-button" (click)="displayOptions()"></button>
+
+        <ul class="nav-list">
+            <li><a id="CCourse" >Create Course</a></li>
+            <li><a id="CTask" routerLink="/assignment">Create Task</a></li>
+        </ul>
+    </div>
+    
+</div>
+
+<div class="hide" id="options">
+    <button>Settings</button>
+    <button class="hide" (click)="goToLoginPage()">Log out</button>
+</div>
