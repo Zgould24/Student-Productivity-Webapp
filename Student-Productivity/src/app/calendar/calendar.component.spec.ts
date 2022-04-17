@@ -13,6 +13,7 @@ describe('CalendarComponent', () => {
     .compileComponents();
   });
 
+<<<<<<< HEAD
   it('should create the app', () => {
     const fixture = TestBed.createComponent(CalendarComponent);
     const app = fixture.componentInstance;
@@ -43,3 +44,4 @@ describe('CalendarComponent', () => {
 //     expect(component).toBeTruthy();
 //   });
 // });
+
