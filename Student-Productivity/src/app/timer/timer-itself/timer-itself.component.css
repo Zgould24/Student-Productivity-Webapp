@@ -1,3 +1,6 @@
+/* CSS */
+
+/* for the areas that take text*/
 textarea {
   width: 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +15,7 @@ textarea {
   background-color: #E0FBFC;
 }
 
-/* CSS */
+/* buttons currently in use for time manipulation buttons, like pause */
 .my-button {
 	background-color:#98c1c9;
 	border-radius:28px;
@@ -34,6 +37,8 @@ textarea {
 	position:relative;
 	top:1px;
 }
+
+/* button currently in use to set time */
 
 .my-button2 {
 	background-color:#98c1c9;
@@ -57,6 +62,8 @@ textarea {
 	top:1px;
 }
 
+/* the big time countdown display */
+
 .bigtime {
 
   font-size: 90pt;
@@ -66,6 +73,8 @@ textarea {
   color: #ee6c4d;
 
 }
+
+/* for centering elements */
 
 .center-it {
   display: block;
