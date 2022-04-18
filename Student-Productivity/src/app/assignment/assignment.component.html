@@ -1,33 +1,29 @@
-<div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="assignment">Course:</label>
-          <input class="form-control" [(ngModel)]="assignment.course" id="assignment">
+<!-- Create an assignment section -->
+<div class="create">
+  <h2>Create Assignment</h2>
+        <div class="course">
+          <label for="assignment">Course</label>
+          <!-- This allows two way data-binding (tracks user input) -->
+          <input [(ngModel)]="assignment.course" id="assignment">
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="assignment">Assignment:</label>
-          <input class="form-control" id="assignment" [(ngModel)]="assignment.assignment">
+        <div class="assignment">
+          <label for="assignment">Assignment</label>
+          <!-- This allows two way data-binding (tracks user input) -->
+          <input id="assignment" [(ngModel)]="assignment.assignment">
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="assignment">Due Date:</label>
-          <input class="form-control" id="assignment" [(ngModel)]="assignment.dueDate">
+        <div class="due-date">
+          <label for="assignment">Due Date</label>
+          <!-- This allows two way data-binding (tracks user input) -->
+          <input type="datetime-local" id="assignment" [(ngModel)]="assignment.dueDate">
         </div>
-      </div>
-    </div>
+        <div class="submit">
+          <!-- Creates an assignment onclick with user info from user input and pushes to homework array -->
+          <input class="button" type="button" value="Submit" (click)="submit()">
+        </div>
   </div>
 
-<input class="button" type="button" value="Submit" (click)="submit()">
-
-<div>
+  <!-- Upcoming Assignment Section -->
+<div class="upcoming">
   <h2>Upcoming Assignments</h2>
   <table>
       <tr>
@@ -36,16 +32,19 @@
           <th>Due Date</th>
           <th>Complete</th>
       </tr>
+      <!-- Loop for displaying assignments that were pushed to homeworks array -->
       <tr *ngFor="let homework of homeworks">
           <td>{{ homework.course }}</td>
           <td>{{ homework.assignment }}</td>
           <td>{{ homework.dueDate }}</td>
-          <td><input class="button" type="button" value="Complete" (click)="complete(homework)"></td>
+          <!-- Moves assignment from upcoming to completed (pushes to completed array) -->
+          <td><input class="button complete" type="button" value="Complete" (click)="complete(homework)"></td>
       </tr>
   </table>
 </div>
 
-<div>
+<!-- Completed Assignment Section -->
+<div class="completed">
   <h2>Completed Assignments</h2>
   <table>
       <tr>
@@ -53,6 +52,7 @@
           <th>Assignment</th>
           <th>Due Date</th>
       </tr>
+      <!-- Loop for displaying assignments set as complete -->
       <tr *ngFor="let completed of completes">
           <td>{{ completed.course }}</td>
           <td>{{ completed.assignment }}</td>
