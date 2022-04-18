@@ -229,3 +229,4 @@ export class CalendarComponent implements OnInit {
 //     this.activeDayIsOpen = false;
 //   }
 // }
+}
