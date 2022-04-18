@@ -36,6 +36,8 @@
   <textarea rows="1" [value]="newHours" #newHoursInput input type="number"></textarea> hours
   <textarea rows="1" [value]="newMinutes" #newMinutesInput></textarea>minutes
   <textarea rows="1" [value]="newSeconds" #newSecondsInput></textarea>seconds
+    
+  <!---linking clicking the button to the function that sets time--->
 
   <button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)" class="my-button2">set time</button>
   </div>
