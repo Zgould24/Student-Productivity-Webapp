@@ -14,14 +14,7 @@ export class CoursesService {
   constructor( private http: HttpClient) { }
 
   getCourses(){
-    // this.http.get<{message: string, courses: Course[]}>("http://localhost:3000/api/courses").subscribe((CourseData)=> {
-    //   this.Courses = CourseData.courses;
-    //   this.CoursesUpdated.next([...this.Courses]);
-    // });
-    // this.Courses = CourseData.courses;
-
-    // this.CoursesUpdated.next([...this.Courses]);
-     return [...this.Courses];
+    return [...this.Courses];
   }
   getCoursesUpdateListener(){
     return this.CoursesUpdated.asObservable();
