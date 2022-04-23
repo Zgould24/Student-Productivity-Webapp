@@ -9,6 +9,9 @@ import { Component } from "@angular/core";
 })
 
 export class TimerItselfComponent{
+  
+  /* handles all timer functionality
+  */
 
   newTime = 0;
   newHours = 0;
@@ -17,6 +20,10 @@ export class TimerItselfComponent{
   overallTime=0;
   newError='';
 
+  /* takes user-inputted integer, converts from respective value (hours, minutes, seconds) into ngx-timer's unit of seconds, then
+     sets timer equal to the amount of converted seconds
+  */
+  
   onSetTimer(newTimeInput: HTMLTextAreaElement) {
     this.newTime= parseInt(newTimeInput.value);
   }
@@ -29,13 +36,12 @@ export class TimerItselfComponent{
 
       this.newError = 'must enter valid integer';
       return;
-
-    /*document.getElementById('newError')!.innerHTML = 'STOP';*/
+     
     }
 
   /*this.newError = 'STOP';
     /*
-    do the num restriction
+    number restriction, so user cannot enter more than twenty-four hours into the timer
     */
 
     this.newError = '';
@@ -47,7 +53,8 @@ export class TimerItselfComponent{
       newSecondsInput.value = '60';
     }
 
-
+    /* the actual input conversion  */
+    
     this.newHours= 3600 * parseInt(newHoursInput.value);
     this.newMinutes=60 * parseInt(newMinutesInput.value);
     this.newSeconds=parseInt(newSecondsInput.value);
