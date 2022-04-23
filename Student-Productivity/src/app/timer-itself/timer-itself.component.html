@@ -1,0 +1,51 @@
+<!-- -# to do:
+  # fix bug: constrain hours minutes and seconds'
+  #fix bug: time inputted ends up registering in the textbox.
+  #clear the textbox?
+#  bonus: into the place where the numbers themselves display
+# Reference post tutorial  for inputting custom values into a textbox
+#      and having the  display hold the value
+#once the timer is done there should be a sound
+# error message for invalid values
+#abreak button green background1010--->
+
+<!DOCTYPE html>
+<html>
+<head>
+<!---<link rel="stylesheet" href="timer-itself.component.css">--->
+</head>
+<body class="timerbg">
+
+
+  <br>
+  <br>
+  <countdown [config]="{ leftTime: overallTime }" #newTimeInput2 class="bigtime center-it"></countdown>
+  <br>
+
+  <div class="timebuttons center-it">
+    <button (click)="newTimeInput2.pause()" class="btn btn-link btn-sm"  class="my-button">pause</button>
+    <button (click)="newTimeInput2.resume()" class="btn btn-link btn-sm"  class="my-button">resume</button>
+    <!--<button (click)="newTimeInput2.stop()" class="btn btn-link btn-sm"  class="my-button">stop</button>-->
+    <button (click)="newTimeInput2.restart()" class="btn btn-link btn-sm my-button">restart</button>
+  </div>
+
+  <div style="text-align: center; color:  #ee6c4d;">
+    <p >{{newError}}</p>
+  </div>
+  <br>
+  <br>
+  <div class="center-it textformat">
+  <textarea rows="1" [value]="newHours" #newHoursInput input type="number"></textarea> hours
+  <textarea rows="1" [value]="newMinutes" #newMinutesInput></textarea>minutes
+  <textarea rows="1" [value]="newSeconds" #newSecondsInput></textarea>seconds
+
+  <button (click)="onSetTimer2(newHoursInput, newMinutesInput, newSecondsInput)" class="my-button2">set time</button>
+  </div>
+  <br>
+  <br>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,18 @@
+<div class="create">
+  <h2>Create Assignment</h2>
+        <div class="course">
+          <label for="assignment">Course</label>
+          <input [(ngModel)]="assignment.course" id="assignment">
+        </div>
+        <div class="assignment">
+          <label for="assignment">Assignment</label>
+          <input id="assignment" [(ngModel)]="assignment.assignment">
+        </div>
+        <div class="due-date">
+          <label for="assignment">Due Date</label>
+          <input type="datetime-local" id="assignment" [(ngModel)]="assignment.dueDate">
+        </div>
+        <div class="submit">
+          <input class="button" type="button" value="Submit" (click)="submit()">
+        </div>
+  </div>

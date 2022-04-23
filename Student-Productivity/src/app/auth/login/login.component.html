@@ -1,0 +1,62 @@
+
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;700&display=swap" rel="stylesheet">
+
+<!--div "Body" acts as body HTML tag so that it helps align the login/signup box center on the main page-->
+<div class="body">
+
+    <!--Main container for both login/create account that flexes to size-->
+    <div class="login-container">
+
+        <!-------LOGIN FORM------->
+        <!--Form that will display all the information for logging in; will be the first thing that loads on our webpage-->
+        <form class="login" id="login" [formGroup]="logInForm" (Submit)="onLogIn()">
+
+            <h1 class="title">Log In</h1>
+
+            <!--Error message will not be visible initially; will appear if user inputs incorrect user/password combination-->
+            <h5 *ngIf="showsErrorMes"class="hide-login-error" id="login-error">Invalid email/username or password</h5>
+            <input class="credentials" id="user-info" type="text" placeholder="Username/Email" formControlName="username" autofocus/>
+            <input class="credentials" id="password-info" type="password" formControlName="password" placeholder="Password"/>
+            <div id="button-container">
+                <button class="interact-button" type="button" (click)="goToCreateAccount()">Create Account</button>
+
+                <!--Login button only has error function, but can be used to route to homepage of user-->
+                <button class="interact-button" type="submit" name="submit" (click)="onLogIn()">Log In</button>
+            </div>
+        </form>
+
+        <!-------CREATE ACCOUNT FORM------->
+        <!--Form that will display all the information for creating an account; this will take place of login information-->
+        <form class="create-account hide-create-account" id="create-account" [formGroup]="createUserForm" (submit)="onSignUp()" >
+
+            <h1 class="title" >Create Account</h1>
+
+            <div *ngIf="(createUserForm.get('firstName')?.touched || createUserForm.get('firstName')?.dirty) && createUserForm.get('firstName')?.invalid" class="invalid-error">First name required</div>
+            <input id="f_name" class="credentials" type="text" placeholder="First Name" required  name="firstName" formControlName="firstName"/>
+
+            <div *ngIf="createUserForm.get('lastName')?.touched && createUserForm.get('lastName')?.invalid" class="invalid-error">Last name required</div>
+            <input id="l_name" class="credentials" type="text" placeholder="Last Name" required  name="lastName" formControlName="lastName"/>  
+
+            <div *ngIf="createUserForm.get('email')?.touched && createUserForm.get('email')?.invalid" class="invalid-error">Email required</div>
+            <input id="email" class="credentials" type="text" placeholder="Email" required name="email" formControlName="email"/>
+
+            <div *ngIf="(createUserForm.get('Username')?.touched || createUserForm.get('Username')?.dirty) && createUserForm.get('Username')?.invalid" class="invalid-error">User name required</div>
+            <input class="credentials" type="text" placeholder="Username" required name="Username" formControlName="Username"/>
+
+            <div *ngIf="(createUserForm.get('password')?.touched || createUserForm.get('password')?.dirty) && createUserForm.get('password')?.invalid && createUserForm.get('confirm_password')?.invalid" class="invalid-error">Password required</div>
+            <div *ngIf="(createUserForm.get('password')?.value != createUserForm.get('confirm_password')?.value) && (createUserForm.get('password')?.valid || createUserForm.get('confirm_password')?.valid)" class="invalid-error">Passwords do not match</div>
+            <input id="pass" class="credentials" type="password" placeholder="Password" required formControlName="password" name="password" />
+            <input id="c_pass" class="credentials" type="password" placeholder="Confirm Password" required name="confirmPassword" formControlName="confirm_password"/>
+
+            <div id="button-container">
+                <button class="interact-button" id="return-login" type="button" (click)="goToLogin()">Back to Login</button>
+                <button class="interact-button" type="submit" >Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <div id="test"></div>
+    <div id="test2"></div>
+</div>

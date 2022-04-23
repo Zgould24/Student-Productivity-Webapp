@@ -1,0 +1,38 @@
+*{
+    font-family: 'Darker Grotesque', sans-serif;
+}
+div {
+    font-size: 1.2rem;
+    text-align: center;
+    /* margin: auto; */
+}
+.upcoming {
+    border: 2px solid #ee6c4d;
+    border-radius: 25px;
+    color: #293241;
+    width: 60%;
+    margin-bottom: 5%;
+}
+
+.completed {
+    border: 2px solid #ee6c4d;
+    border-radius: 25px;
+    color: #293241;
+    width: 60%;
+}
+
+table{
+    margin: auto;
+    color: #293241;
+}
+
+th {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
