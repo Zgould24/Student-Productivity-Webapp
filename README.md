@@ -32,6 +32,7 @@ npm install mongoose
 npm install body-parser
 ```
 ```
+npm install jsonwebtoken
 ```
 
 ## Demo
