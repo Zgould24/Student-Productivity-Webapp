@@ -1,0 +1,33 @@
+<div class="upcoming">
+  <h2>Upcoming Assignments</h2>
+  <table>
+      <tr>
+          <th>Course</th>
+          <th>Assignment</th>
+          <th>Due Date</th>
+          <th>Complete</th>
+      </tr>
+      <tr *ngFor="let homework of Homeworks">
+          <td>{{ homework.course }}</td>
+          <td>{{ homework.assignment }}</td>
+          <td>{{ homework.dueDate }}</td>
+          <td><input class="button-complete" type="button" value="Complete" (click)="complete(homework)"></td>
+      </tr>
+  </table>
+</div>
+
+<div class="completed">
+  <h2>Completed Assignments</h2>
+  <table>
+      <tr>
+          <th>Course</th>
+          <th>Assignment</th>
+          <th>Due Date</th>
+      </tr>
+      <tr *ngFor="let completed of Completes">
+          <td>{{ completed.course }}</td>
+          <td>{{ completed.assignment }}</td>
+          <td>{{ completed.dueDate }}</td>
+      </tr>
+  </table>
+  </div>

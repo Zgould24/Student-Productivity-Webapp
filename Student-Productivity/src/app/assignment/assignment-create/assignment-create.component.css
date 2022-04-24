@@ -1,0 +1,70 @@
+*{
+    font-family: 'Darker Grotesque', sans-serif;;
+}
+div {
+    /* font-family: 'Darker Grotesque', sans-serif;; */
+    font-size: 1.2rem;
+    text-align: center;
+    margin: auto;
+}
+
+.button {
+    /* font-family: 'Darker Grotesque', sans-serif;; */
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.submit .button:hover{
+    background-color: #e0fbfc;
+}
+
+.complete:hover{
+    background-color: #98c1d9;
+}
+
+.create {
+    border: 2px solid #ee6c4d;
+    border-radius: 25px;
+    color: #293241;
+    width: 60%;
+    margin-bottom: 5%;
+}
+
+label, input{
+    
+    /* font-family: 'Delius', cursive; */
+    font-size: 1.1rem;
+    color: #293241;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+.upcoming {
+    border: 2px solid #ee6c4d;
+    border-radius: 25px;
+    color: #293241;
+    width: 60%;
+    margin-bottom: 5%;
+}
+
+.completed {
+    border: 2px solid #ee6c4d;
+    border-radius: 25px;
+    color: #293241;
+    width: 60%;
+}
+
+table{
+    margin: auto;
+    color: #293241;
+}
+
+th {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
