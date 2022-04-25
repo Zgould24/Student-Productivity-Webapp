@@ -1,21 +1,47 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
-
 <div id="heading">
-    <h1>Student Productivity App</h1>
-    <div class="navigation">
-        <button id="home-button" (click)="displayOptions()"></button>
+    <h1 routerLink ="/">Student Productivity App</h1>
+    <div class="navigation" *ngIf="getUserIsAuthenticated()">
 
         <ul class="nav-list">
-            <li><a id="CCourse" >Create Course</a></li>
-            <li><a id="CTask" routerLink="/assignment">Create Task</a></li>
+            
+            <li><a id="CCourse" routerLink="CCreate" >Create Course</a></li>
+            <li><a id="CTask" routerLink="TaskCreate">Create Task</a></li>
+            <li><a id="Calendar" routerLink="Calendar">Calendar</a></li>
+            <li><a id="Timer" routerLink="StudyTimer">Timer</a></li>
         </ul>
+     <button id="home-button" (click)="displayOptions()" ></button>
     </div>
-    
 </div>
 
-<div class="hide" id="options">
+<div class="hide" id="options" *ngIf="getUserIsAuthenticated()">
+    <h5>Welcome</h5>
     <button>Settings</button>
-    <button class="hide" (click)="goToLoginPage()">Log out</button>
+    <button class="hide" (click)="onLogOut()">Log out</button>
 </div>
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="nav">
+
+        <div class="nav_content">
+            <nav class="navigation_nav">
+            <a  routerLink="/" class="nav-logo">Home</a>
+                <ul class="navigation_items">
+                <li routerLink="/CCreate"><a>Create a Course Note</a></li>
+                <li><a>Create a Task</a></li>
+                <li><a>Calendar</a></li>
+                <li><a>Study Timer</a></li>
+            </ul>
+            </nav>      
+        </div>
+    </div>
+ -->
