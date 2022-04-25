@@ -1,3 +1,65 @@
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+} */
+
+ /* .nav{
+    position: relative;
+    background-color:#040406;
+    border-bottom: 1px solid  whitesmoke;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    top: 0;
+    left: 0; 
+} */
+
+
+/* .nav a {
+    font-family: 'ヒラギノ明朝 Pro W6';
+    text-decoration: none;
+    color:whitesmoke;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+ 
+
+
+/* .nav a.nav_logo {
+    float: left;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+} */
+
+/* .nav ul{
+    float: right;
+    list-style: none;
+    height: inherit;
+    padding: 0 50px;
+} */
+
+/* .nav ul li{
+    display: inline-block;
+} */
+
+/* .nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 0 30px;
+}
+.nav ul li a:hover{
+    background-color: grey;
+}   */
+
+
 #heading {
     display: flex;
     justify-content: space-between;
@@ -11,6 +73,7 @@
     margin: 0.5rem 0rem 0.5rem 2rem;
 }
 
+
 #home-button {
     display: flex;
     width: 50px;
@@ -18,10 +81,10 @@
     border-radius: 100%;
     background: none;
     border: none;
-     background-image: url("/assets/Images/default-avatar.png");
-     background-repeat: no-repeat;
-     background-size: contain;
-     transition: 0.1s ease-in-out;
+    background-image: url("/assets/Images/default-avatar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.1s ease-in-out;
 }
 #home-button:hover {
     opacity: 0.8;
@@ -39,6 +102,10 @@
     transition: 0.3s ease-in-out;
 }
 
+#options{
+    border: 1px solid black;
+}
+
 .options {
     display: flex;
     flex-direction: column;
@@ -46,6 +113,12 @@
     float: right;
     width: 5rem;
     height: 4rem;
+    background-color: whitesmoke;
+   
+}
+
+.options h5 {
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .options button {
@@ -53,8 +126,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: none;
-    border: none;
+    /* background: none;
+    border: none; */
     font-family: 'Nunito Sans', sans-serif;
     box-shadow: 0px 0px 2px black;
     transition: 0.2s ease-in-out;
@@ -65,9 +138,29 @@
     transition: 0.2s ease-in-out;
 }
 
-.nav-list {
-    list-style: none;
+.navigation {
+    display: flex;
+    justify-content: spece-between;
 }
+
+.nav-list  {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    list-style: none;
+    
+}
+.nav-list li {
+    float: left;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.nav-list a{
+    color: whitesmoke;
+    text-decoration: none
+}
+
 
 .hide {
     display: none;

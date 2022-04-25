@@ -1,20 +1,15 @@
 <div class="course-list-class">
-<div class="header">
-    <div class="add-course">
-    <button id="addCourse" (click)="toggleShow()">&#43;</button>
-    <div class="form-container" *ngIf="isShown">
-        <course-create></course-create>
+    <div class="course-list-header">
+        <h2>My Courses</h2>
     </div>
-    </div>
-   
-</div>
+
 <div class="course-list-container" *ngFor="let course of Courses">
     <details>
         <summary>
             <header>{{course.title}}</header>
         </summary>
         <div class="details-container">
-        <h1 class="course-title">{{course.title}}</h1>
+        <h1 class="course-title">Course Title: {{course.title}}</h1>
         <h2 class="course-instructor">Instructor Name: {{course.instructorName}}</h2>
         <div class="schedule-container">
             <h3>Class Time</h3>
@@ -28,6 +23,12 @@
             <p>{{officehour}}</p>
         </div>
         </div>
+        <div class="courseMemo">
+            <h3>Notes</h3>
+            <p>{{course.CourseMemo}}</p>
+        </div>
+        <button  [routerLink]="['/Cedit', course.id]">Edit</button>
+        <button  type="submit" (click)="onDelete(course.id)">Delete</button>
         </div>
         
         

@@ -1,4 +1,7 @@
+<div class="course-create">
+
 <div class="form-container">
+    <h2 class="create-form-header">Create a course</h2>
 <form [formGroup]="courseForm" >
     <div class="input-container">
         <label for="title" class="form-label">Title: </label>
@@ -24,10 +27,10 @@
                     <input type="text" formControlName="time" class="form-control">
                 </td>
                 <td>
-                    <button class="remove-btn" (click)="removeClassTime(i)">Remove</button>
+                    <button class="btn" (click)="removeClassTime(i)">Remove</button>
                 </td>
             </tr>
-            <tr><th width="150px"><button class="add-btn" (click)="addClassTime()">Add More</button></th></tr>
+            <tr><th width="150px"><button class="btn" (click)="addClassTime()">Add More</button></th></tr>
         </table>
         </div>
        
@@ -41,11 +44,11 @@
                     <input type="text" formControlName="time" class="form-control">
                     </td>
                     <td>
-                    <button class="remove-btn" (click)="removeOfficeHour(j)">Remove</button>
+                    <button class="btn" (click)="removeOfficeHour(j)">Remove</button>
                     </td>  
                 </tr>
                
-                  <tr><th width="150px"><button class="add-btn" (click)="addOfficeHour()">Add More</button></th></tr>
+                  <tr><th width="150px"><button class="btn" (click)="addOfficeHour()">Add More</button></th></tr>
             </table>
         </div>
     </div>
@@ -58,7 +61,9 @@
     </div>
  
 </form>
-
-   <button type="submit" class="btn" (click)="onSubmit()">Submit</button>
+   <button type="submit" class="btn" (click)="onSubmit()">Create</button>
+</div>
 
 </div>
+
+

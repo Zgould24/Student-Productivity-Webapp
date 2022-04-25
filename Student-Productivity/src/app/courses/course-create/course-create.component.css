@@ -1,23 +1,44 @@
+*{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 1.2rem;
+}
+.create-form-header{
+    font-size: 2.0rem;
+}
 .form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    background-color:#3d5a80;
+    color: #E0FBFC;
+    padding-top: auto;
+   
 }
+
 .course-form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    width: auto;
+    height: 100%;
 }
+
 
 .input-container {
     display: flex;
     float: row;
     justify-content: space-evenly;
+    /* gap: 10px; */
+    margin: 10px;
 }
-
 
 .warning {
-    color: #ee6c4d;
+    color: #EE6C4D;
     background-color: #FFD2D2;
 }
+.btn {
+    background-color: #98C1D9;
+    width: 100px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+

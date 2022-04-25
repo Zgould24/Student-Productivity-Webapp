@@ -3,7 +3,7 @@ import { Course } from '../../models/course';
 import { CourseCreateComponent } from '../course-create/course-create.component';
 import { CoursesService} from '../courses.service';
 import {Subscription} from 'rxjs';
-
+import { AuthService } from '../../auth/auth.service';
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
@@ -13,9 +13,9 @@ export class CourseListComponent  implements OnInit, OnDestroy{
 
   courses: Course[] = [];
   private courseSub: Subscription;
-  isShown: boolean = false;
+  // isShown: boolean = false;
 
-  constructor( private coursesService: CoursesService) { }
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit(){
     this.coursesService.getCourses();
@@ -28,13 +28,17 @@ export class CourseListComponent  implements OnInit, OnDestroy{
   ngOnDestroy(){
     this.courseSub.unsubscribe(); 
   }
-  toggleShow(){
-    this.isShown = ! this.isShown;
-  }
+  // toggleShow(){
+  //   this.isShown = ! this.isShown;
+  // }
 
   get Courses(){
     return this.courses;
   }
-  addCourse(){
+  onDelete(courseId: string){
+    console.log(courseId);
+    this.coursesService.deleteCourse(courseId);
   }
+
+  
 }
