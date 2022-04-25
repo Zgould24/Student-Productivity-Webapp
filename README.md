@@ -34,7 +34,7 @@ npm install
 npm install ngx-countdown --save
 ```
 ```
-npm install --save @fullcalendar/angular @fullcalendar/daygrid
+npm install --save @fullcalendar/angular @fullcalendar/daygrid @fullcalendar/interaction
 ```
 
 ### Back-end related npm installs.
@@ -46,11 +46,20 @@ npm install express
 npm install mongoose
 ```
 ```
+npm install --save mongoose-unique-validator
+```
+
+```
 npm install body-parser
 ```
 ```
 npm install jsonwebtoken
 ```
+```
+npm install bcryptjs
+```
+
+
 
 ## Demo
 
