@@ -89,19 +89,22 @@ export class LoginComponent implements OnInit {
     let fn = (<HTMLInputElement>document.getElementById("f_name"));
     let ln = (<HTMLInputElement>document.getElementById("l_name"));
     let e = (<HTMLInputElement>document.getElementById("email"));
+    let u = (<HTMLInputElement>document.getElementById("username"));
     let p = (<HTMLInputElement>document.getElementById("pass"));
     let cp = (<HTMLInputElement>document.getElementById("c_pass"));
 
-    if(!fn.value || !ln.value || !e.value || !p.value || !cp.value) {
+    if(!fn.value || !ln.value || !e.value || !u.value || !p.value || !cp.value) {
       if(!fn.value) {fn.style.borderColor = "red"} else(fn.style.borderColor = "rgb(61, 90, 128)");
       if(!ln.value) {ln.style.borderColor = "red"} else(ln.style.borderColor = "rgb(61, 90, 128)");
       if(!e.value) {e.style.borderColor = "red"} else(e.style.borderColor = "rgb(61, 90, 128)");
+      if(!u.value) {u.style.borderColor = "red"} else(u.style.borderColor = "rgb(61, 90, 128)");
       if(!p.value) {p.style.borderColor = "red"} else(p.style.borderColor = "rgb(61, 90, 128)");
       if(!cp.value) {cp.style.borderColor = "red"} else(cp.style.borderColor = "rgb(61, 90, 128)");
     }  else if(p.value != cp.value) {
       if(!fn.value) {fn.style.borderColor = "red"} else(fn.style.borderColor = "rgb(61, 90, 128)");
       if(!ln.value) {ln.style.borderColor = "red"} else(ln.style.borderColor = "rgb(61, 90, 128)");
       if(!e.value) {e.style.borderColor = "red"} else(e.style.borderColor = "rgb(61, 90, 128)");
+      if(!u.value) {u.style.borderColor = "red"} else(u.style.borderColor = "rgb(61, 90, 128)");
       p.style.borderColor = "red";
       cp.style.borderColor = "red";
     }  else {

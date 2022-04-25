@@ -43,7 +43,7 @@
             <input id="email" class="credentials" type="text" placeholder="Email" required name="email" formControlName="email"/>
 
             <div *ngIf="account.get('username')?.touched && account.get('username')?.invalid" class="invalid-error">Username required</div>
-            <input class="credentials" type="text" placeholder="Username" required name="username" formControlName="username"/>
+            <input id="username" class="credentials" type="text" placeholder="Username" required name="username" formControlName="username"/>
 
             <div *ngIf="account.get('password')?.touched && account.get('password')?.invalid && account.get('confirmPassword')?.invalid" class="invalid-error">Password required</div>
             <div *ngIf="(account.get('password')?.value != account.get('confirmPassword')?.value) && (account.get('password')?.valid || account.get('confirmPassword')?.valid)" class="invalid-error">Passwords do not match</div>
