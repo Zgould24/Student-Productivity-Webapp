@@ -3,15 +3,6 @@
 //  if the user didn't enter it
 
 export class Assignment {
-<<<<<<< HEAD
-
-  constructor(public course?: String, public assignment?: String, public dueDate?: String, public id?: Number) {
-      this.course = course;
-      this.assignment = assignment;
-      this.dueDate = dueDate;
-      this.id = 0;
-    }
-=======
  course: String;
    assignment: String;
    dueDate: String;
@@ -23,5 +14,4 @@ export class Assignment {
   //     this.dueDate = dueDate;
   //     this.id = 0;
   //   }
->>>>>>> hiroki
 }

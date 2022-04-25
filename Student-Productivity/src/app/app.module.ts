@@ -14,7 +14,6 @@ import { AssignmentListComponent } from './assignment/assignment-list/assignment
 import { TimerItselfComponent } from './timer-itself/timer-itself.component';
 import { CountdownModule } from 'ngx-countdown';
 import { HomeComponent } from './home/home.component';
-// import { CalendarComponent } from './calendar/calendar.component';
 
 // Calendar imports
 import { CalendarComponent } from './calendar/calendar.component';
@@ -29,20 +28,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 ]);
 
 
-import { CountdownModule } from 'ngx-countdown';
-import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
+// import { CountdownModule } from 'ngx-countdown';
+// import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    AssignmentComponent,
-    NavbarComponent,
-    TimerItselfComponent,
-    CourseCreateComponent,
-    CourseListComponent
-
-=======
     CourseListComponent,
     CourseCreateComponent,
     HeaderComponent,
@@ -52,21 +43,15 @@ import { TimerItselfComponent } from './timer/timer-itself/timer-itself.componen
     TimerItselfComponent,
     HomeComponent,
     CalendarComponent,
->>>>>>> hiroki
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-<<<<<<< HEAD
-    CountdownModule,
-    ReactiveFormsModule
-=======
     ReactiveFormsModule,
     HttpClientModule,
     CountdownModule,
     FullCalendarModule
->>>>>>> hiroki
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';
-import {Assignment} from '../../model/assignment';
+import {Assignment} from '../../models/assignment';
 import { AssignmentsService } from '../assignments.service';
 @Component({
   selector: 'app-assignment-list',
