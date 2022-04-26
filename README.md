@@ -8,21 +8,22 @@ Britley Desir, Zachary Gould, Sara Mehdinia, Hiroki Sato, Nicole Ponce
 
 ## Applied/Learned Technical Skills
 
-
-    - Front-end related technical skills
-        - Angular 
-            - Being able to create angular components with typescript code
-            - Application of Observer pattern with Angular service, Subscription and Subject.
-            - Connecting to back-end through specific HTTP request by using HTTPClient.
-            - Routing between differnt pages and different components. 
+- Front-end related technical skills
+    - Angular 
+        - Being able to create angular components with typescript code
+        - Application of Observer pattern with Angular service, Subscription and Subject.
+        - Connecting to back-end through specific HTTP request by using HTTPClient.
+        - Routing between differnt pages and different components. 
         - Typescript
         - HTML and CSS 
-    - Back-end related technical skills
-        - Node.js and Express
-        - HTTP Request and Protocol 
-        - Bcryptjs
-        - MongoDB Atlas, Mongoose
-        - jsonwebtoken
+- Back-end related technical skills
+    - Node.js and Express
+    - HTTP Request and Protocol 
+    - Bcryptjs
+    - MongoDB Atlas, Mongoose
+    - jsonwebtoken
+
+
 ## Components
 Angular components are most basic UI building blocks of Angular app. We can design components with HTML and CSS, implement some functionality with Typescript. For our application, components are divided into following eight components. 
 1. Login Component
