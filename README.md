@@ -30,17 +30,15 @@ Angular components are most basic UI building blocks of Angular app. We can desi
     - Allows users to create an account for this application for authentication, authorization, and data binding purpose. 
     - Allows user to type in their user email and password. 
 2. Assignment Create Component
-    - 
+    - Creates assignment with its course name, name of assignment and due date.
 3. Assignment List Component
     - Loads a list of completed and in-progress assignments. 
-    - 
 4. Course List Component
     - Contains a list of courses that user created with course create form in course create component. 
     - Enables deletion and edits of the course from course list. 
 5. Course Create Component
 6. Calendar Component
 7. Timer Component
-
 
 ## Necessary Imports & environmental setup (for node module)
 This project required various imports for some of our front-end components and for our back-end service with javascript. Libraries are installed with npm install command on your CLI.
