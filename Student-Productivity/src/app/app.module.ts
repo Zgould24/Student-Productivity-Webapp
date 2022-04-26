@@ -28,8 +28,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 ]);
 
 
-// import { CountdownModule } from 'ngx-countdown';
-// import { TimerItselfComponent } from './timer/timer-itself/timer-itself.component';
 
 @NgModule({
   declarations: [
