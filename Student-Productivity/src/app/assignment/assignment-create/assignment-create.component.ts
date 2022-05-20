@@ -1,28 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Assignment } from "../../models/assignment";
 import { AssignmentsService } from '../assignments.service';
-
+import { CoursesService } from '../../courses/courses.service';
+import {Course} from '../../models/course';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-assignment-create',
   templateUrl: './assignment-create.component.html',
   styleUrls: ['./assignment-create.component.css']
 })
-export class AssignmentCreateComponent{
+export class AssignmentCreateComponent implements OnInit, OnDestroy{
 
   assignment: Assignment;
-  homeworks: any;
-  completes: any;
-  clicked = false;
-  constructor(private assignmentService: AssignmentsService) { 
+ 
+  private courseSub: Subscription;
+  private courseNames: string[];
+  private NoCourses: boolean;
+  
+  constructor(private assignmentService: AssignmentsService, private courseService: CoursesService) { 
     this.assignment = new Assignment();
+    this.courseNames = [];
   }
 
-  ngOnInit(): void {
-    this.homeworks = [];
-    this.completes = [];
-    // console.log(this.homeworks);
+  ngOnInit() {
+    this.courseService.getCourses();
+    // console.log("Hello from the assignment create");
+    this.courseSub = this.courseService.getCoursesUpdateListener().subscribe((courses: Course[]) => {
+      // console.log("inside the subscribe");
+      if (courses.length === 0) {
+        // we want to do a boolean/ 
+
+      } else {
+      console.log(courses);
+      for (let i = 0; i < courses.length; i++){
+        // console.log(courses[i].title);
+        // console.log(typeof courses[i].title);
+        this.courseNames.push(courses[i].title);
+      }
+      }
+    });
+    //  console.log(this.courseNames);
+  }
+  ngOnDestroy(){
+    this.courseSub.unsubscribe();
   }
 
+  get CourseNames(){
+    return this.courseNames;
+  }
   submit() {
     const courseName = this.assignment.course || "INVDINPUT";
     const assignmentName = this.assignment.assignment || "INVDINPUT";
@@ -32,19 +57,10 @@ export class AssignmentCreateComponent{
       return ;
     } else {
       console.log("creating task");
-    this.homeworks.push(this.assignment);
+    
     this.assignmentService.addAssignment(courseName, assignmentName, dueDate, false);
     }
-    // this.assignment = newAssignment;
-    console.log(this.homeworks);
-    this.clicked = true;
-  }
-
-  complete(event: any) {
-    console.log(event);
-    // this.assignmentService.completeAssignment()
-    this.completes.push(event);
-    this.homeworks.splice(this.homeworks.indexOf(event), 1);
+    
   }
 
   

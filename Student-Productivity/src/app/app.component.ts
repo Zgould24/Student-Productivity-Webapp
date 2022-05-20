@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from './auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -8,5 +9,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Student-Productivity';
+  constructor(private authService: AuthService){}
+  ngOnInit(){
+    this.authService.autoAuthUser();
+  }
 }

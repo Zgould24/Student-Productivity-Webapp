@@ -1,18 +1,24 @@
 <div class="create">
   <h2>Create Assignment</h2>
-        <div class="course">
+        <div class="assignment-create-input">
           <label for="assignment">Course</label>
-          <input [(ngModel)]="assignment.course" id="assignment">
+          <div ng-controller="myDropDown">
+          <select name="courseDD" id="courses">
+            <option value="" disabled selected>Select something...</option>
+            <option *ngFor="let course of CourseNames">{{course}}</option>
+          </select>
+          </div>
+          <!-- <input [(ngModel)]="assignment.course" id="assignment"> -->
         </div>
-        <div class="assignment">
+        <div class="assignment-create-input">
           <label for="assignment">Assignment</label>
           <input id="assignment" [(ngModel)]="assignment.assignment">
         </div>
-        <div class="due-date">
+        <div class="assignment-create-input">
           <label for="assignment">Due Date</label>
           <input type="datetime-local" id="assignment" [(ngModel)]="assignment.dueDate">
         </div>
-        <div class="submit">
+        <div class="assignment-create-input">
           <input class="button" type="button" value="Submit" (click)="submit()">
         </div>
   </div>

@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 //establishing connection to MongoDB database with Mongoose.
-mongoose.connect("mongodb+srv://hirosato:iuoh4HSEvbOccQDT@spcluster.pxhv0.mongodb.net/SPDatabase?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://hirosato:obBVSv2835arLfg4@spcluster.pxhv0.mongodb.net/SPDatabase?retryWrites=true&w=majority")
           .then(()=> {
             console.log("Connected to database!");
           })

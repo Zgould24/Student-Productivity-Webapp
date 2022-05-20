@@ -29,7 +29,6 @@ export class AssignmentListComponent implements OnInit, OnDestroy {
     })
   }
 
-
   ngOnDestroy(){
     this.homeworksSub.unsubscribe(); 
     // this.completedSub.unsubscribe();
