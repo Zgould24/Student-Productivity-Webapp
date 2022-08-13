@@ -1,3 +1,5 @@
+// Assignment database schema for the MongoDB database.
+
 const mongoose = require('mongoose');
 const taskSchema = mongoose.Schema({
     creatorId: {type: String, required: true},

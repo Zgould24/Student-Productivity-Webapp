@@ -1,6 +1,8 @@
+// Course database schema for the MongoDB database.
+// creatorID is used to identified the user who created the data so that data can be loaded to front-end correctly.
+
+
 const mongoose = require('mongoose');
-
-
 
 const courseSchema = mongoose.Schema({
     creatorId: {type: String, required: true},

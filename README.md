@@ -95,7 +95,7 @@ npm install jsonwebtoken
 npm install bcryptjs
 ```
 
-## some angular concepts
+## Some angular concepts
 ### Angular Components
   Angular component is a basic user interface building block which consits of:
 1. A HTML file which templates what is going to be on the page
@@ -112,9 +112,7 @@ npm install bcryptjs
 
 
 
-## REST API
-### What is it? 
-REST API or RESTFUL API stands for REpresentational State Transfer API. 
+
 
 ## Demo
 
