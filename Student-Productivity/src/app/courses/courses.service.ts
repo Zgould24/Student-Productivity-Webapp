@@ -10,8 +10,9 @@ import {map} from 'rxjs/operators';
 export class CoursesService {
   private Courses: Course[] = [];
   private CoursesUpdated = new Subject<Course[]>();
+  private CourseListEmpt = new Subject<boolean>();
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getCourses(){
     this.http.get<{message: string, courses: any}>("http://localhost:3000/api/courses").pipe(map((CourseData)=> {
@@ -29,7 +30,13 @@ export class CoursesService {
     }))
     .subscribe(transformedCourses => {
       this.Courses = transformedCourses;
+      if (this.Courses.length === 0){
+        this.CourseListEmpt.next(true);
+      } else {
+        this.CourseListEmpt.next(false);
+      }
       this.CoursesUpdated.next([...this.Courses]);
+      
     });
     // return [...this.Courses];
   }

@@ -49,7 +49,7 @@ Angular components are most basic UI building blocks of Angular app. We can desi
 6. Calendar Component
     - Displays a interactive calendar
 7. Timer Component
-    - 
+    - Enables users to set, start, and stop a timer
 
 ## Necessary Imports & environmental setup (for node module)
 This project required various imports for some of our front-end components and for our back-end service with javascript. Libraries are installed with npm install command on your CLI.
@@ -97,7 +97,19 @@ npm install bcryptjs
 
 ## some angular concepts
 ### Angular Components
+  Angular component is a basic user interface building block which consits of:
+1. A HTML file which templates what is going to be on the page
+2. A typescript class which determines its behavior
+3. A CSS selector which helps us define how the component is going to be called and used.
+4. A CSS file to determine the styling. 
+
+  CSS file and selector is completely different. While **CSS file is optional** for styling the component, **CSS selector is required** for every angular component. It functions as a tag in HTML script and whenever it is found, selector tells Angular to instantiate the component. 
+  To declare that the class should be a component, we use ```@Component```. 
+
+
 ### Angular Service
+  Angular service allows encapsulation of common functionalities which is used across multiple different part of angular application. This allows us to reduce redundancy in our programming and promots code reuse especially to access, and store data.   In order for us developers to reuse the functionalities, we use ```@Injectable``` notation and inject the service into component through constructor of the component.   
+
 
 
 ## REST API
